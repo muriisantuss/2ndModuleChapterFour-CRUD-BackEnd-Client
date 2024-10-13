@@ -1,4 +1,5 @@
 $("#cep").mask("99.999-999");
+$("#number").mask("999999");
 
 function validationCep() {
   var cep = document.getElementById("cep").value;
@@ -8,11 +9,14 @@ function validationCep() {
   $.getJSON(uri, (set) => {
     if (set.erro) {
       showError("CEP não encontrado");
+      isValidCep = false; 
     } else {
       insertValueOnInput(set);
+      isValidCep = true; 
     }
   }).fail(() => {
     showError("CEP inválido");
+    isValidCep = false; 
   });
 }
 

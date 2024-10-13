@@ -1,53 +1,59 @@
 let clients = [];
+let isValidCep = false;
 loadClients();
 
 function save() {
-  let getClients =
-    {
-      id: clients.length + 1,
-      name: document.getElementById("name").value + " " + document.getElementById("lastname").value,
-      address: document.getElementById("address").value,
-      cep: document.getElementById("cep").value,
-      neighborhood: document.getElementById("neighborhood").value,
-      city: document.getElementById("city").value,
-      state: document.getElementById("state").value,
-    }
+  if (!isValidCep) {
+    showError("Cadastro bloqueado: CEP inválido ou não encontrado.");
+    return; 
+  }
 
-
-  addNewRow(getClients)
-  clients.push(getClients)
-  document.getElementById("form").reset()
+  let getClients = {
+    id: clients.length + 1,
+    name:
+      document.getElementById("name").value +
+      " " +
+      document.getElementById("lastname").value,
+    address: document.getElementById("address").value,
+    number: document.getElementById("number").value,
+    cep: document.getElementById("cep").value,
+    neighborhood: document.getElementById("neighborhood").value,
+    city: document.getElementById("city").value,
+    state: document.getElementById("state").value,
+  };
+  addNewRow(getClients);
+  clients.push(getClients);
+  document.getElementById("form").reset();
+  showError("");
 }
 
 function loadClients() {
-  for(let get of clients){
-    addNewRow(get)
+  for (let get of clients) {
+    addNewRow(get);
   }
 }
 
 function addNewRow(c) {
-  var table = document.getElementById("registrationTable");
-  let newRow = table.insertRow();
+  const table = document.getElementById("registrationTable");
+  const newRow = table.insertRow();
 
+  const createCell = (content, className = "") => {
+    const cell = newRow.insertCell();
+    cell.textContent = content;
+    if (className) {
+      cell.className = className;
+    }
+    return cell;
+  };
 
-  const id = document.createTextNode(c.id);
-  newRow.insertCell().appendChild(id);
+  const { id, name, address, number, cep, neighborhood, city, state } = c;
 
-  const name = document.createTextNode(c.name);
-  newRow.insertCell().appendChild(name);
-
-  const address = document.createTextNode(c.address);
-  newRow.insertCell().appendChild(address);
-
-  const cep = document.createTextNode(c.cep);
-  newRow.insertCell().appendChild(cep);
-
-  const neighborhood = document.createTextNode(c.neighborhood);
-  newRow.insertCell().appendChild(neighborhood);
-
-  const city = document.createTextNode(c.city);
-  newRow.insertCell().appendChild(city);
-
-  const state = document.createTextNode(c.state);
-  newRow.insertCell().appendChild(state);
+  createCell(id);
+  createCell(name);
+  createCell(address, "d-none d-md-table-cell");
+  createCell(number, "d-none d-md-table-cell");
+  createCell(cep);
+  createCell(neighborhood, "d-none d-md-table-cell");
+  createCell(city);
+  createCell(state, "d-none d-md-table-cell");
 }
