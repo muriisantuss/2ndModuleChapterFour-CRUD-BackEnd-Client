@@ -42,7 +42,7 @@
             CEP:
           </label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" id="cep" placeholder="CEP: " required>
+            <input type="text" class="form-control" id="cep" onblur="validationCep()" placeholder="CEP: " required>
           </div>
         </section>
 
@@ -102,7 +102,7 @@
       </form>
       <section class="row">
         <article>
-          <header class="display-6 text-center mb-3">Alunos cadastrados</header>
+          <header class="display-6 text-center mb-3">Informações dos clientes cadastrados</header>
         </article>
         <div class="col-md-10 offset-md-1">
           <table class="table">
@@ -117,7 +117,7 @@
                 <th scope="col">Estado</th>
               </tr>
             </thead>
-            <tbody id="studentTable"></tbody>
+            <tbody id="registrationTable"></tbody>
           </table>
         </div>
       </section>
