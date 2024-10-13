@@ -37,13 +37,14 @@
           </div>
         </section>
 
-        <section class="row mb-3">
+        <section class="row mb-3 align-items-center">
           <label class="form-label">
             CEP:
           </label>
           <div class="col-sm-4">
             <input type="text" class="form-control" id="cep" onblur="validationCep()" placeholder="CEP: " required>
           </div>
+          <div id="errorMessage" class="col-sm-4 text-danger"></div>
         </section>
 
         <section class="row mb-3">
@@ -95,9 +96,9 @@
           </div>
 
         </section>
-        
-        <div class="mb-3">
-          <button type="submit" class="btn btn-primary col-sm-2 mt-2">Cadastrar</button>
+
+        <div class="mb-3 text-center">
+          <button type="submit" class="btn btn-primary col-sm-3">Cadastrar</button>
         </div>
       </form>
       <section class="row">
