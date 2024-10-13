@@ -1,5 +1,9 @@
+$("#cep").mask("99.999-999")
+
+
 function validationCep() {
   var cep = document.getElementById("cep").value;
+  cep = cep.replace(/[.-]/g, "")
   let uri = `https://viacep.com.br/ws/${cep}/json/`;
 
   $.getJSON(uri, (set) => {
