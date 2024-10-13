@@ -18,19 +18,19 @@ function validationCep() {
 
 function insertValueOnInput(set) {
   showError("");
-  document.getElementById("endereco").value = `${set.logradouro}`;
-  document.getElementById("bairro").value = `${set.bairro}`;
-  document.getElementById("cidade").value = `${set.localidade}`;
-  document.getElementById("estado").value = `${set.estado}`;
-  document.getElementById("numero").removeAttribute("readonly");
+  document.getElementById("address").value = `${set.logradouro}`;
+  document.getElementById("neighborhood").value = `${set.bairro}`;
+  document.getElementById("city").value = `${set.localidade}`;
+  document.getElementById("state").value = `${set.estado}`;
+  document.getElementById("number").removeAttribute("readonly");
 }
 
 function clearValueOnInput() {
-  document.getElementById("endereco").value = "";
-  document.getElementById("bairro").value = "";
-  document.getElementById("cidade").value = "";
-  document.getElementById("estado").value = "";
-  document.getElementById("numero").setAttribute("readonly", "readonly");
+  document.getElementById("address").value = "";
+  document.getElementById("neighborhood").value = "";
+  document.getElementById("city").value = "";
+  document.getElementById("state").value = "";
+  document.getElementById("number").setAttribute("readonly", "readonly");
 }
 
 function showError(msg) {

@@ -17,7 +17,7 @@
       </header>
     </article>
     <main class="card p-5 shadow">
-      <form id="form" class="col-md-10 offset-md-1">
+      <form onsubmit="event.preventDefault(); save();" id="form" class="col-md-10 offset-md-1">
         <section class="row mb-3">
           <div class="col-sm-6">
             <label class="form-label">
@@ -53,7 +53,7 @@
               Endereço:
             </label>
             <div>
-              <input type="text" class="form-control" id="endereco" placeholder="Endereço: " readonly required>
+              <input type="text" class="form-control" id="address" placeholder="Endereço: " readonly required>
             </div>
           </div>
           <div class="col-sm-2">
@@ -61,7 +61,7 @@
               Número:
             </label>
             <div>
-              <input type="text" class="form-control" id="numero" placeholder="Número: " readonly required>
+              <input type="text" class="form-control" id="number" placeholder="Número: " readonly required>
             </div>
           </div>
         </section>
@@ -72,7 +72,7 @@
               Bairro:
             </label>
             <div>
-              <input type="text" class="form-control" id="bairro" placeholder="Bairro: " readonly required>
+              <input type="text" class="form-control" id="neighborhood" placeholder="Bairro: " readonly required>
             </div>
           </div>
           <div class="col-sm-6">
@@ -80,7 +80,7 @@
               Cidade:
             </label>
             <div>
-              <input type="text" class="form-control" id="cidade" placeholder="Cidade: " readonly required>
+              <input type="text" class="form-control" id="city" placeholder="Cidade: " readonly required>
             </div>
           </div>
         </section>
@@ -91,7 +91,7 @@
               Estado:
             </label>
             <div>
-              <input type="text" class="form-control" id="estado" placeholder="Estado: " readonly required>
+              <input type="text" class="form-control" id="state" placeholder="Estado: " readonly required>
             </div>
           </div>
 
@@ -129,6 +129,7 @@
   "></script>
   <script src="/js/jquery.mask.min.js"></script>
   <script src="/js/script.js"></script>
+  <script src="/js/table.js"></script>
 </body>
 
 </html>
